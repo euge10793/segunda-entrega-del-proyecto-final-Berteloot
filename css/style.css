@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*paleta de colores
+.color1 {color: #84d1ff;}
+.color2 {color: #dcf7ff;}
+.color3 {color: #0f1b35;}
+.color4 {color: #76777c;}
+.color5 {color: #e2e2e2;}*/
+
+.grilla {
+    display: flexbox;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.6fr 0.7fr 1.4fr 1.4fr 1.1fr 0.8fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "nav nav nav nav"
+        "header header header header"
+        "primeraSeccion primeraSeccion primeraSeccion primeraSeccion"
+        "segundaSeccion segundaSeccion segundaSeccion segundaSeccion"
+        "form form form form"
+        "footer footer footer footer";
+}
+
+/*nav*/
+.nav {
+    grid-area: nav;
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: #fdfbfb;
+}
+
+/*header*/
+
+.header {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #dcf7ff;
+    margin-top: 0 auto;
+    padding: 20px;
+    background-image: linear-gradient(to right, #0f1b35, #dcf7ff);
+}
+
+/*primeraSeccion*/
+
+.primeraSeccion {
+    grid-area: primeraSeccion;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0 auto;
+    padding: 20px;
+    animation-name: primeraAnimacion;
+    animation-duration: 10s;
+    background-color: #dcf7ff;
+
+}
+
+.primeraSeccion p {
+    max-width: 550px;
+    text-align: center;
+    margin: 1rem;
+}
+
+.primeraSeccion button:hover {
+    transform: scale(1.1);
+    background-color: black;
+    color: white;
+}
+
+.primeraSeccion button {
+    padding: .5rem;
+    margin: 1rem;
+}
+
+.primeraSeccion h2 {
+    font-size: 2rem;
+    margin-top: 0 auto;
+}
+
+/*segunda seccion*/
+
+.segundaSeccion {
+    grid-area: segundaSeccion;
+    display: flex;
+    flex-direction: column;
+    background-color: #dcf7ff;
+    margin-top: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.segundaSeccion p {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0 auto;
+}
+
+/*form*/
+
+.form {
+    grid-area: form;
+    background-color: #dcf7ff;
+    min-height: 25vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0 auto;
+}
+
+.form h3 {
+    font-size: 2rem;
+    margin-top: 0 auto;
+}
+
+.form div {
+    margin-top: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.form input[type=submit]:hover {
+    background-color: black;
+    color: white;
+    margin-top: 0 auto;
+}
+
+.form input:focus {
+    width: 400px;
+    transition: 2s;
+    margin-top: 0 auto;
+}
+
+/*footer*/
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to right, #0f1b35, #dcf7ff);
+    margin-top: 0 auto;
+
+}
+
+@keyframes primeraAnimacion {
+    0% {
+        background-color: #84d1ff;
+    }
+
+    25% {
+        background-color: #dcf7ff;
+    }
+
+    50% {
+        background-color: #0f1b35;
+    }
+
+    75% {
+        background-color: #76777c;
+    }
+
+    100% {
+        background-color: #e2e2e2;
+    }
+
+}
+
+@media(max-width:768px) {
+    .grilla {
+        grid-template-areas:
+            "nav nav nav nav"
+            " header header header header"
+            "primeraSeccion primeraSeccion primeraSeccion primeraSeccion"
+            "segundaSeccion segundaSeccion segundaSeccion segundaSeccion"
+            "form form form form"
+            "footer footer footer footer";
+    }
+
+    .segundaSeccion {
+        grid-area: segundaSeccion;
+        display: flex;
+        flex-direction: column;
+        background-color: #dcf7ff;
+    }
+
+    .segundaSeccion p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
